@@ -1,0 +1,156 @@
+<html> 
+    <head>
+        <title> Number of People</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="Number of People.css">
+        <style> 
+            body 
+            {
+                margin: 0;
+                font-family: 'Roboto', sans-serif;
+                background: linen;
+            }
+        
+        .header
+            {
+                width: 100%;
+                height: 350px;
+                background-color: rgba(240, 4, 4, 0);
+                overflow: hidden;
+                position: relative;
+            }
+    
+            #header-image 
+            {
+            width: 80%;
+            margin: 80px;
+            }
+        
+        #menu-header {
+            width: 100%;
+            height: 50px;
+            position: absolute; 
+            top : 0;
+    
+        } 
+        #menu { margin-top: 20px; } 
+
+        #menu > .btn {
+        margin-left: 30px; 
+        color: #909090;
+        text-decoration: none; 
+        padding: 5px;
+        border-radius: 10px;
+        transition: background 0.3s; 
+        }
+        #menu > .btn:hover {
+    background-color: rgba(88, 88, 88, 0.5)
+    }
+        .active { 
+            background-color: #a57c3528;
+        }
+
+
+        </style>
+
+    </head>
+
+    <body>
+        <center>
+        <div class="main-header">
+            <div class="header">
+                <img id="header-image" src="saptco lo.png" alt> </center> 
+                <div id="menu-header">
+                <div id="menu">
+                    <a href="Frist page.html" class="btn active"> Main Page </a>
+                    <a href="Buses.html" class="btn active"> Buses </a>
+                    <a href="Metro and Trains.html" class="btn active"> Metro And Trains </a>
+                    <a href="Educational Transportation.html" class="btn active"> Educational Transportation </a>
+                    <a href="Digital Services.html" class="btn active"> Digital Services </a>
+                </div> 
+                </div>
+                
+                <h1>Number of People</h1>
+                <div class="box">
+                    <label for="name">Male</label>
+                    <div class="dec button">-</div>
+                    <input type="text" name="qty" id="1" value="0" class="input filed">
+                    <div class="inc button">+</div>
+                </div>
+
+                <div class="box">
+                    <label for="name">Female</label>
+                    <div class="dec button">-</div>
+                    <input type="text" name="qty" id="2" value="0" class="input filed">
+                    <div class="inc button">+</div>
+                </div>
+
+                <div class="box">
+                    <label for="name">Children</label>
+                    <div class="dec button">-</div>
+                    <input type="text" name="qty" id="3" value="0" class="input filed">
+                    <div class="inc button">+</div>
+                </div>
+
+                <div class="box">
+                    <label for="name">Infant</label>
+                    <div class="dec button">-</div>
+                    <input type="text" name="qty" id="4" value="0" class="input filed">
+                    <div class="inc button">+</div>
+                </div>
+
+                <script>
+                    var incrementButton = document.getElementsByClassName('inc')
+                    var decrementButton = document.getElementsByClassName('dec')
+                    //console.log(incrementButton);
+                    //console.log(decrementButton);
+
+                    //INCREMENT
+                    for(var i = 0; i < incrementButton.length; i++)
+                    var button = incrementButton[i];
+                    button.addEventListener('click', function(event){
+                        var buttonClicked = event.target;
+                        //console.log(buttonClicked);
+                        var input = buttonClicked.parentElement.children[2];
+                        //console.log(input);
+                        var inputvalue = input.value;
+                        //console.log(inputvalue);
+                        var newValue = parseInt(inputValue) + 1;
+                        //console.log(newValue);
+                        input.value = newValue;
+
+                    })
+                
+
+                //DECREMENT
+                for(var i = 0; i < decrementButton.length; i++)
+                    var button = decrementButton[i];
+                    button.addEventListener('click', function(event){
+                        var buttonClicked = event.target;
+                        //console.log(buttonClicked);
+                        var input = buttonClicked.parentElement.children[2];
+                        //console.log(input);
+                        var inputvalue = input.value;
+                        //console.log(inputvalue);
+                        var newValue = parseInt(inputValue) - 1;
+                        //console.log(newValue);
+                        input.value = newValue;
+
+                        {
+                        else{
+                                input.value =0;
+                                //alert('QTY CAN NOT BE LESS THAN ZERO');
+                            }
+                        }
+
+                    }) 
+                </script>
+                
+                <h1> <br> </h1>        
+    </body>
+
+</html>
